@@ -1,6 +1,7 @@
 package pl.urban.bpmn;
 
 import io.camunda.zeebe.client.ZeebeClient;
+import io.camunda.zeebe.client.api.response.ActivatedJob;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,7 +33,9 @@ public class OrderProcessController {
                 .variables(variables)
                 .send();
 
-        variables.put("processInstanceKey", Objects.requireNonNull(event.join()).getProcessInstanceKey());
+
+
+        variables.put("processInstanceKey", event.join().getProcessInstanceKey());
         return variables;
     }
 

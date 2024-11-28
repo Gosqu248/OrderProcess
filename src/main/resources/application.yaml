@@ -9,18 +9,21 @@ zeebe:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:orderdb
-    driver-class-name: org.h2.Driver
-    username: gu
-    password:
-  h2:
-    console:
-      enabled: true
+    url: jdbc:postgresql://195.150.230.208:5432/2023_urban_grzegorz
+    username: 2023_urban_grzegorz
+    password: 35240
+    hikari:
+      max-lifetime: 2000000
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
+        default_schema: TIJO
+    open-in-view: false
 
-
+logging:
+  level:
+    pl.urban.bpmn: DEBUG
+    pl.urban.bpmn.workers: DEBUG
+    pl.urban.bpmn.api.service: DEBUG

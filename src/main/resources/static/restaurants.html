@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Znalezione Restauracje</title>
+    <style>
+        .restaurants-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .restaurant-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="restaurants-container">
+    <h1>Znalezione Restauracje</h1>
+    <div id="restaurantsList"></div>
+    <a href="index.html" class="back-button">Wróć do wyszukiwania</a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const restaurantsList = document.getElementById('restaurantsList');
+        const restaurants = JSON.parse(localStorage.getItem('foundRestaurants') || '[]');
+
+        if (restaurants.length === 0) {
+            restaurantsList.innerHTML = '<p>Brak restauracji do wyświetlenia.</p>';
+        } else {
+            restaurants.forEach(restaurant => {
+                const restaurantCard = document.createElement('div');
+                restaurantCard.classList.add('restaurant-card');
+
+                restaurantCard.innerHTML = `
+                        <h3>${restaurant.name}</h3>
+                        <p>Adres: ${restaurant.address}</p>
+                        <p>Odległość: ${restaurant.distance.toFixed(2)} km</p>
+                    `;
+
+                restaurantsList.appendChild(restaurantCard);
+            });
+        }
+
+        // Clear the stored restaurants after displaying
+        localStorage.removeItem('foundRestaurants');
+    });
+</script>
+</body>
+</html>

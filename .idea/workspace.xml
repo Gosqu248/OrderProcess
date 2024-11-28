@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="416a438d-f939-467f-8749-82f4f5ec1a31" name="Changes" comment="" />
+    <list default="true" id="416a438d-f939-467f-8749-82f4f5ec1a31" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/controller/ProcessController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/service/EmitterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/restaurants.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/OrderProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/OrderProcessController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/SearchAddressWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/SearchAddressWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/model/order.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/model/order.bpmn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/order.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/order.bpmn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/OrderProcessController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/OrderProcessController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/workers/SearchAddressWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/workers/SearchAddressWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/script.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,12 +30,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="Class" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="KubernetesApiProvider">{
   &quot;contexts&quot;: [
@@ -63,8 +82,10 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Application.executor": "Run",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/grzes/IdeaProjects/BPMN/src/main/java/pl/urban/bpmn/api",
     "list.type.of.created.stylesheet": "CSS",
@@ -101,6 +122,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-107bc6b7" />
         <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
       </set>
     </attachedChunks>
@@ -121,7 +143,7 @@
       <workItem from="1732717953725" duration="5647000" />
       <workItem from="1732743863470" duration="25000" />
       <workItem from="1732744364798" duration="465000" />
-      <workItem from="1732784959071" duration="7084000" />
+      <workItem from="1732784959071" duration="17456000" />
     </task>
     <servers />
   </component>
