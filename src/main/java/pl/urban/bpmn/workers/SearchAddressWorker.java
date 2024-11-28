@@ -15,25 +15,27 @@ public class SearchAddressWorker {
 
     private RestaurantAddressService restaurantAddressService;
 
+
     @JobWorker(type = "findNearbyRestaurants")
     public Map<String, Object> findNearbyRestaurants(final JobClient client, final ActivatedJob job) {
         var jobResultVariables = job.getVariablesAsMap();
         double radiusKm = 5.0;
 
         String address = (String) jobResultVariables.get("address");
-        if (address == null || address.trim().isEmpty()) {
-            jobResultVariables.put("isRestaurant", false);
-            return jobResultVariables;
-        }
+
 
         var restaurants = restaurantAddressService.searchNearbyRestaurants(address, radiusKm);
 
         if (!restaurants.isEmpty()) {
             jobResultVariables.put("restaurants", restaurants);
             jobResultVariables.put("isRestaurant", true);
+            jobResultVariables.forEach((k, v) -> System.out.println(k + " : " + v));
+
         } else {
             jobResultVariables.put("isRestaurant", false);
         }
+
+
 
         return jobResultVariables;
     }

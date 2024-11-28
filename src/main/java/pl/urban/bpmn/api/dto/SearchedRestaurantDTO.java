@@ -13,4 +13,11 @@ public class SearchedRestaurantDTO {
     private double latitude;
     private double longitude;
     private double distance;
+
+    @Override
+    public String toString() {
+        return "name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", distance=" + distance ;
+    }
 }
