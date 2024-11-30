@@ -5,6 +5,9 @@ zeebe:
       clientId: "1YXMvOMwWffaiyehwlW_G8TknraS7ua9"
       clientSecret: "p3IRE30-ziSZxGQBPJn5Zq5QRchakVHtspo3JrARuuv-jX1JFLKb6hgZL6VpX0e6"
       region: "lhr-1"
+    broker:
+      contactPoint: 127.0.0.1:26500
+
 
 
 spring:

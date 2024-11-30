@@ -5,20 +5,30 @@
     <link rel="stylesheet" href="style.css">
     <title>Znalezione Restauracje</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
         .restaurants-container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: 50px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .restaurants-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
         }
         .restaurant-card {
             background-color: #f9f9f9;
             border: 1px solid #ddd;
             border-radius: 5px;
             padding: 15px;
-            margin-bottom: 15px;
         }
         .back-button {
             display: block;
@@ -30,19 +40,47 @@
             border-radius: 5px;
             text-align: center;
         }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 <div class="restaurants-container">
     <h1>Znalezione Restauracje</h1>
-    <div id="restaurantsList"></div>
+    <div id="restaurantsList" class="restaurants-grid"></div>
     <a href="index.html" class="back-button">Wróć do wyszukiwania</a>
 </div>
 
 <script>
+    function loadMenu(restaurantId) {
+        const processInstanceKey = sessionStorage.getItem('processInstanceKey');
+        const variables = { restaurantId: restaurantId };
+
+        // Call completeUserTask endpoint directly
+        fetch(`/tasks/${processInstanceKey}/complete`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(variables),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('User Task completed:', data);
+                alert("Menu załadowane! Sprawdź szczegóły w konsoli.");
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("Wystąpił błąd podczas ładowania menu.");
+            });
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         const restaurantsList = document.getElementById('restaurantsList');
         const restaurants = JSON.parse(localStorage.getItem('foundRestaurants') || '[]');
+        console.log(restaurants);
 
         if (restaurants.length === 0) {
             restaurantsList.innerHTML = '<p>Brak restauracji do wyświetlenia.</p>';
@@ -52,16 +90,17 @@
                 restaurantCard.classList.add('restaurant-card');
 
                 restaurantCard.innerHTML = `
-                        <h3>${restaurant.name}</h3>
-                        <p>Adres: ${restaurant.address}</p>
-                        <p>Odległość: ${restaurant.distance.toFixed(2)} km</p>
-                    `;
+                    <h3>${restaurant.name}</h3>
+                    <p>Category: ${restaurant.category}</p>
+                    <p>Odległość: ${restaurant.distance.toFixed(2)} km</p>
+                    <br>
+                    <button type="button" onclick="loadMenu(${restaurant.restaurantId})">Zobacz menu</button>
+                `;
 
                 restaurantsList.appendChild(restaurantCard);
             });
         }
 
-        // Clear the stored restaurants after displaying
         localStorage.removeItem('foundRestaurants');
     });
 </script>

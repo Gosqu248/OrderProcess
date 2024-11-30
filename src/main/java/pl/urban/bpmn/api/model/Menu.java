@@ -39,5 +39,13 @@ public class Menu {
     @ManyToMany(mappedBy = "menu")
     private Set<Restaurant> restaurant;
 
+    @Override
+    public String toString() {
+        return "id='" + id + '\'' +
+                "name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", price=" + price +
+                ", ingredients=" + ingredients ;
+    }
 
 }

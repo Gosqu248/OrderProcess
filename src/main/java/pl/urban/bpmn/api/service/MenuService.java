@@ -25,6 +25,11 @@ public class MenuService {
         return sortByCategory(menuItems);
     }
 
+    public Menu getMenuItem(Long menuItemId) {
+        return menuRepository.findById(menuItemId)
+                .orElseThrow(() -> new IllegalArgumentException("Menu with id " + menuItemId + " not found"));
+    }
+
     public Menu addMenuItem(Menu menu) {
         return menuRepository.save(menu);
     }

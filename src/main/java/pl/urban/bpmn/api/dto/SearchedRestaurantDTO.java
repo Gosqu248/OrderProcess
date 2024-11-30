@@ -16,7 +16,8 @@ public class SearchedRestaurantDTO {
 
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
+        return "id='" + restaurantId + '\'' +
+                "name='" + name + '\'' +
                 ", category='" + category + '\'' +
                 ", distance=" + distance ;
     }
