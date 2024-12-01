@@ -24,9 +24,25 @@ spring:
       hibernate:
         default_schema: TIJO
     open-in-view: false
+  mail:
+    host: "live.smtp.mailtrap.io"
+    port: 587
+    username: "api"
+    password: "5fbc80f01f9da4d5281b0a7776713a24"
+    properties:
+      mail:
+        smtp:
+          from: "Webstaurator@xn--kork-py-jpb.pl"
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            protocols: TLSv1.2
 
 logging:
   level:
     pl.urban.bpmn: DEBUG
     pl.urban.bpmn.workers: DEBUG
     pl.urban.bpmn.api.service: DEBUG
+

@@ -26,6 +26,10 @@ public class CartService {
         cart.clear();
     }
 
+    public double calculateTotal() {
+        return cart.stream().mapToDouble(Menu::getPrice).sum();
+    }
+
     public List<Menu> getMenus() {
         return new ArrayList<>(cart);
     }

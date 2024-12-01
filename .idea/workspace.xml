@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="416a438d-f939-467f-8749-82f4f5ec1a31" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/service/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/service/PaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/AcceptOrderWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/CheckPaymentWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/SendConfirmationEmailWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/model/order.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/model/order.bpmn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/order.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/order.bpmn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/api/service/CartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/api/service/CartService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +59,9 @@
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -141,7 +154,8 @@
       <workItem from="1732875860050" duration="24597000" />
       <workItem from="1732915657455" duration="928000" />
       <workItem from="1732965881598" duration="20559000" />
-      <workItem from="1733000968498" duration="5670000" />
+      <workItem from="1733000968498" duration="10888000" />
+      <workItem from="1733075618491" duration="754000" />
     </task>
     <servers />
   </component>
