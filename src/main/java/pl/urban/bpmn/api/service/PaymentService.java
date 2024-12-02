@@ -7,7 +7,13 @@ public class PaymentService {
 
 
     public boolean checkBlik(String code) {
-        return code.length() == 6;
+        if ( code.length() == 6) {
+            return true;
+        } else {
+            System.out.println("BLIK code must have 6 digits");
+            return false;
+
+        }
     }
 
     public boolean checkCard(String cardNumber, String name, String date, String cvv) {

@@ -34,6 +34,7 @@ public class SearchNearbyRestaurantsWorker {
                         .send()
                         .join();
             System.out.println("Restaurants not found ");
+            System.out.println("Completion of the process!");
             return jobResultVariables;
 
         }

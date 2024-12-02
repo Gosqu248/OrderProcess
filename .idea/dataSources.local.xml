@@ -11,7 +11,10 @@
       <schema-mapping>
         <introspection-scope>
           <node kind="database" qname="2023_urban_grzegorz">
-            <node kind="schema" qname="tijo" />
+            <node kind="schema">
+              <name qname="tijo" />
+              <name qname="webs" />
+            </node>
           </node>
         </introspection-scope>
       </schema-mapping>

@@ -35,7 +35,7 @@ public class CheckPaymentWorker {
                 System.out.println("Payment failed");
             }
 
-        } else if (payment.equals("Card")) {
+        } else if (payment.equals("card")) {
             String cardNumber = (String) jobResultVariables.get("cardNumber");
             String name = (String) jobResultVariables.get("name");
             String expirationDate = (String) jobResultVariables.get("expirationDate");

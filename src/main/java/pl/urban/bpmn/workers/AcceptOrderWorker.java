@@ -52,6 +52,8 @@ public class AcceptOrderWorker {
         order.setOrderMenus(orderMenus);
 
         orderService.createOrder(order);
+        System.out.println("Order accepted");
+        System.out.println("Completion of the process");
 
         return jobResultVariables;
     }

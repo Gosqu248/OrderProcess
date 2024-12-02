@@ -5,19 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="416a438d-f939-467f-8749-82f4f5ec1a31" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/service/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/service/PaymentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/AcceptOrderWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/CheckPaymentWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/SendConfirmationEmailWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/07813ac3-5d23-40b9-b1b7-02b3d06bf563.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/07813ac3-5d23-40b9-b1b7-02b3d06bf563.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/07813ac3-5d23-40b9-b1b7-02b3d06bf563/storage_v2/_src_/database/2023_urban_grzegorz.E9CrCg/schema/tijo.elI2AA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/07813ac3-5d23-40b9-b1b7-02b3d06bf563/storage_v2/_src_/database/2023_urban_grzegorz.E9CrCg/schema/tijo.elI2AA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/service/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/api/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/AcceptOrderWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/AcceptOrderWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/CheckPaymentWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/CheckPaymentWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/SearchNearbyRestaurantsWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/urban/bpmn/workers/SearchNearbyRestaurantsWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/model/order.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/model/order.bpmn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/restaurant.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/restaurants.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/order.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/order.bpmn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/api/service/CartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/api/service/CartService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/api/service/PaymentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/api/service/PaymentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/workers/AcceptOrderWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/workers/AcceptOrderWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/workers/CheckPaymentWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/workers/CheckPaymentWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/workers/SearchNearbyRestaurantsWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/urban/bpmn/workers/SearchNearbyRestaurantsWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/restaurant.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/restaurants.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,45 +77,49 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2pOA2U8qJdakbLRArflNfPUAMaU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Maven.BPMN [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.BPMN [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/grzes/IdeaProjects/ExampleBPMN&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Maven.BPMN [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor": "Run",
+    "Maven.BPMN [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.Application.executor": "Run",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/grzes/IdeaProjects/ExampleBPMN",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\grzes\IdeaProjects\BPMN\src\main\java\pl\urban\bpmn\api" />
@@ -155,12 +168,16 @@
       <workItem from="1732915657455" duration="928000" />
       <workItem from="1732965881598" duration="20559000" />
       <workItem from="1733000968498" duration="10888000" />
-      <workItem from="1733075618491" duration="754000" />
+      <workItem from="1733075618491" duration="943000" />
+      <workItem from="1733134217702" duration="4808000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
