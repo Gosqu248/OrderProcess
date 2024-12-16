@@ -24,14 +24,13 @@ public class GeocodingService {
                 URLEncoder.encode(address, StandardCharsets.UTF_8));
         ResponseEntity<GeocodingResponse[]> response = restTemplate.getForEntity(url, GeocodingResponse[].class);
 
-        if (response.getBody() != null && response.getBody().length > 0) {
+
             GeocodingResponse location = response.getBody()[0];
             Map<String, Double> coordinates = new HashMap<>();
             coordinates.put("lat", Double.parseDouble(location.getLat()));
             coordinates.put("lon", Double.parseDouble(location.getLon()));
             return coordinates;
-        }
-        throw new IllegalArgumentException("Could not find coordinates for address: " + address);
+
     }
 
 }

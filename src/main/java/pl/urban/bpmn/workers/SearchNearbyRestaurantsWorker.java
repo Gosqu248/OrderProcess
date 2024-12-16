@@ -25,24 +25,22 @@ public class SearchNearbyRestaurantsWorker {
         String address = (String) jobResultVariables.get("address");
         System.out.println("Searching for nearby restaurants for address: " + address);
 
-        List<SearchedRestaurantDTO> restaurants = restaurantAddressService.searchNearbyRestaurants(address, 5.0);
+        try {
+            List<SearchedRestaurantDTO> restaurants = restaurantAddressService.searchNearbyRestaurants(address, 5.0);
+            jobResultVariables.put("restaurants", restaurants);
+            restaurants.forEach(System.out::println);
 
-        if (restaurants.isEmpty()) {
-
+            return jobResultVariables;
+        } catch (Exception e) {
             client.newThrowErrorCommand(job.getKey())
-                        .errorCode("NO_RESTAURANTS_FOUND")
-                        .send()
-                        .join();
+                    .errorCode("NO_RESTAURANTS_FOUND")
+                    .send()
+                    .join();
             System.out.println("Restaurants not found ");
             System.out.println("Completion of the process!");
             return jobResultVariables;
-
         }
 
-        jobResultVariables.put("restaurants", restaurants);
-        restaurants.forEach(System.out::println);
-
-        return jobResultVariables;
     }
 
 }

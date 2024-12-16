@@ -488,10 +488,10 @@
         <bpmn:flowNodeRef>Activity_1bbu6ps</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1v6uf4t</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_00cmsbe</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1bp7nyp</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_15oawgh</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0ech7w9</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0l5yp5n</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0xvdvh8</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_1qqdjmk" name="User">
         <bpmn:flowNodeRef>Event_0q2lais</bpmn:flowNodeRef>
@@ -514,10 +514,6 @@
         <bpmn:flowNodeRef>Gateway_1br3wle</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_05ljzn5</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1sjr165</bpmn:flowNodeRef>
-      </bpmn:lane>
-      <bpmn:lane id="Lane_03jlehb" name="Payment Service">
-        <bpmn:flowNodeRef>Activity_08syh0j</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1bp7nyp</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:startEvent id="Event_0q2lais" name="Entered address">
@@ -644,6 +640,16 @@
       <bpmn:incoming>Flow_1xkj99z</bpmn:incoming>
       <bpmn:outgoing>Flow_1o8xmeb</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:serviceTask id="Activity_1bp7nyp" name="Make payment">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="checkPayment" />
+        <zeebe:ioMapping>
+          <zeebe:output source="=isPaymentSuccessful" target="isPaymentSuccessful" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1xeitef</bpmn:incoming>
+      <bpmn:outgoing>Flow_12lua9l</bpmn:outgoing>
+    </bpmn:serviceTask>
     <bpmn:exclusiveGateway id="Gateway_15oawgh" name="Is paymeth successfull?">
       <bpmn:incoming>Flow_12lua9l</bpmn:incoming>
       <bpmn:outgoing>Flow_1xxp3el</bpmn:outgoing>
@@ -737,7 +743,7 @@
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=payment="BLIK"</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1o8xmeb" sourceRef="Activity_0gkqqnh" targetRef="Gateway_05ljzn5" />
-    <bpmn:sequenceFlow id="Flow_1xeitef" sourceRef="Gateway_05ljzn5" targetRef="Event_0xvdvh8" />
+    <bpmn:sequenceFlow id="Flow_1xeitef" sourceRef="Gateway_05ljzn5" targetRef="Activity_1bp7nyp" />
     <bpmn:sequenceFlow id="Flow_12lua9l" sourceRef="Activity_1bp7nyp" targetRef="Gateway_15oawgh" />
     <bpmn:sequenceFlow id="Flow_1xxp3el" name="No" sourceRef="Gateway_15oawgh" targetRef="Activity_1dl78k6">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=isPaymentSuccessful=false</bpmn:conditionExpression>
@@ -754,43 +760,11 @@
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=payment="card"</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_02tfjaj" sourceRef="Activity_1sjr165" targetRef="Gateway_05ljzn5" />
-    <bpmn:sequenceFlow id="Flow_0bsjt1z" sourceRef="Event_0xvdvh8" targetRef="Activity_08syh0j" />
-    <bpmn:sequenceFlow id="Flow_1jxsuns" sourceRef="Activity_08syh0j" targetRef="Activity_1bp7nyp" />
-    <bpmn:task id="Activity_08syh0j" name="Check payment status">
-      <bpmn:incoming>Flow_0bsjt1z</bpmn:incoming>
-      <bpmn:outgoing>Flow_1jxsuns</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:sendTask id="Activity_1bp7nyp" name="Send payment response">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="checkPayment" />
-        <zeebe:ioMapping>
-          <zeebe:output source="=isPaymentSuccessful" target="isPaymentSuccessful" />
-        </zeebe:ioMapping>
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_1jxsuns</bpmn:incoming>
-      <bpmn:outgoing>Flow_12lua9l</bpmn:outgoing>
-    </bpmn:sendTask>
-    <bpmn:intermediateThrowEvent id="Event_0xvdvh8" name="Go to payment gateway">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="goToPaymentGateway" />
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_1xeitef</bpmn:incoming>
-      <bpmn:outgoing>Flow_0bsjt1z</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_0yrlyl4" />
-    </bpmn:intermediateThrowEvent>
   </bpmn:process>
-  <bpmn:message id="Message_0g63hqm" name="isPaymentSuccessful">
-    <bpmn:extensionElements>
-      <zeebe:subscription correlationKey="=isPaymentSuccessful" />
-    </bpmn:extensionElements>
-  </bpmn:message>
-  <bpmn:message id="Message_135q5np" name="goTO">
-    <bpmn:extensionElements />
-  </bpmn:message>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1u6afja">
       <bpmndi:BPMNShape id="Participant_0z19n7r_di" bpmnElement="Participant_0z19n7r" isHorizontal="true">
-        <dc:Bounds x="120" y="-440" width="3330" height="970" />
+        <dc:Bounds x="120" y="-220" width="3330" height="750" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_1qqdjmk_di" bpmnElement="Lane_1qqdjmk" isHorizontal="true">
@@ -799,10 +773,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_1phw8rh_di" bpmnElement="Lane_1phw8rh" isHorizontal="true">
         <dc:Bounds x="150" y="-220" width="3300" height="375" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_03jlehb_di" bpmnElement="Lane_03jlehb" isHorizontal="true">
-        <dc:Bounds x="150" y="-440" width="3300" height="220" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_1k40uws" bpmnElement="Event_0q2lais">
@@ -884,10 +854,14 @@
         <dc:Bounds x="2480" y="350" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0q1c6lx_di" bpmnElement="Activity_1bp7nyp">
+        <dc:Bounds x="2690" y="-30" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_15oawgh_di" bpmnElement="Gateway_15oawgh" isMarkerVisible="true">
         <dc:Bounds x="2915" y="-15" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="2845" y="-4" width="60" height="27" />
+          <dc:Bounds x="2912" y="-45" width="60" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_00q5k1b_di" bpmnElement="Gateway_00q5k1b" isMarkerVisible="true">
@@ -926,20 +900,6 @@
       <bpmndi:BPMNShape id="Activity_1l0w329_di" bpmnElement="Activity_1sjr165">
         <dc:Bounds x="2470" y="190" width="100" height="80" />
         <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_08syh0j_di" bpmnElement="Activity_08syh0j">
-        <dc:Bounds x="2690" y="-360" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1883s00_di" bpmnElement="Activity_1bp7nyp">
-        <dc:Bounds x="2890" y="-360" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0s9j24v_di" bpmnElement="Event_0xvdvh8">
-        <dc:Bounds x="2722" y="-8" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="2632" y="0" width="74" height="27" />
-        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_082vv6y_di" bpmnElement="Event_0l5yp5n">
         <dc:Bounds x="512" y="-48" width="36" height="36" />
@@ -1089,11 +1049,11 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1xeitef_di" bpmnElement="Flow_1xeitef">
         <di:waypoint x="2740" y="275" />
-        <di:waypoint x="2740" y="28" />
+        <di:waypoint x="2740" y="50" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_12lua9l_di" bpmnElement="Flow_12lua9l">
-        <di:waypoint x="2940" y="-280" />
-        <di:waypoint x="2940" y="-15" />
+        <di:waypoint x="2790" y="10" />
+        <di:waypoint x="2915" y="10" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1xxp3el_di" bpmnElement="Flow_1xxp3el">
         <di:waypoint x="2940" y="35" />
@@ -1137,14 +1097,6 @@
         <di:waypoint x="2640" y="230" />
         <di:waypoint x="2640" y="300" />
         <di:waypoint x="2715" y="300" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0bsjt1z_di" bpmnElement="Flow_0bsjt1z">
-        <di:waypoint x="2740" y="-8" />
-        <di:waypoint x="2740" y="-280" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1jxsuns_di" bpmnElement="Flow_1jxsuns">
-        <di:waypoint x="2790" y="-320" />
-        <di:waypoint x="2890" y="-320" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
