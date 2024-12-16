@@ -14,6 +14,12 @@ public class CheckPaymentWorker {
 
     private final PaymentService paymentService;
 
+    @JobWorker(type = "goToPaymentGateway")
+    public Map<String, Object> goToPaymentGateway(final ActivatedJob job) {
+        System.out.println("Going to payment service");
+        return null;
+    }
+
     @JobWorker(type = "checkPayment")
     public Map<String, Object> loadRestaurantMenu(final ActivatedJob job) {
         System.out.println("Checking payment");
